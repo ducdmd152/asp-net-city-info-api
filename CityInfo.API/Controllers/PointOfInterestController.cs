@@ -49,6 +49,11 @@ namespace CityInfo.API.Controllers
             PointOfInterestForCreationDTO pointOfInterest
             )
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
             var city = CityDataStore.Instance.Cities.SingleOrDefault(c => c.Id == cityId);
 
             if (city == null)
