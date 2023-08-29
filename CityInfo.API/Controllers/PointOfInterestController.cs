@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CityInfo.API.Controllers
 {
@@ -9,17 +10,39 @@ namespace CityInfo.API.Controllers
     [ApiController]
     public class PointOfInterestController : ControllerBase
     {
+        private readonly ILogger<PointOfInterestController> _logger;
+        public PointOfInterestController(ILogger<PointOfInterestController> logger)
+        {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            // HttpContext.RequestServices.GetService()
+        }
+
         [HttpGet]
         public ActionResult<IEnumerable<PointOfInterestDTO>> Get(int cityId)
         {
-            var city = CityDataStore.Instance.Cities.SingleOrDefault(c => c.Id == cityId);
-
-            if (city == null)
+            try
             {
-                return NotFound();
-            }
+                throw new Exception("Exception sample.");
 
-            return Ok(city.PointsOfInterest);
+                var city = CityDataStore.Instance.Cities.SingleOrDefault(c => c.Id == cityId);
+
+                if (city == null)
+                {
+                    _logger.LogInformation($"City with id {cityId} wasn't found.");
+                    return NotFound();
+                }
+
+                return Ok(city.PointsOfInterest);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogCritical(
+                    $"Exception while getting points for city with id {cityId}.",
+                    ex
+                    );
+                return StatusCode(500, "A problem happened while handling your request.");
+            }
+            
         }
 
         [HttpGet("{pointOfInterestId}", Name = "GetPointOfInterest")]
