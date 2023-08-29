@@ -40,3 +40,4 @@ D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Settings.Configuration
 D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Sinks.File.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\appsettings.Production.json
