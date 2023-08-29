@@ -30,3 +30,13 @@ D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch
 D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Newtonsoft.Json.dll
 D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.AspNetCore.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\Serilog.Sinks.File.dll
