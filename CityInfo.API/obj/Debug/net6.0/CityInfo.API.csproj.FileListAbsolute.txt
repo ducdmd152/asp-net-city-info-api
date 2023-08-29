@@ -25,3 +25,4 @@ D:\dotNET6\CityInfo\CityInfo.API\obj\Debug\net6.0\refint\CityInfo.API.dll
 D:\dotNET6\CityInfo\CityInfo.API\obj\Debug\net6.0\CityInfo.API.pdb
 D:\dotNET6\CityInfo\CityInfo.API\obj\Debug\net6.0\CityInfo.API.genruntimeconfig.cache
 D:\dotNET6\CityInfo\CityInfo.API\obj\Debug\net6.0\ref\CityInfo.API.dll
+D:\dotNET6\CityInfo\CityInfo.API\bin\Debug\net6.0\getting-started-with-rest-slides.pdf
