@@ -122,8 +122,42 @@ namespace CityInfo.API.Controllers
             int pointOfInterestId,
             JsonPatchDocument<PointOfInterestForUpdateDTO> patchDocument
             )
-        {
-            return null;
+        {            
+            var city = CityDataStore.Instance.Cities.SingleOrDefault(c => c.Id == cityId);
+
+            if (city == null)
+            {
+                return NotFound();
+            }
+
+            var pointFromStore = city.PointsOfInterest.FirstOrDefault(p => p.Id == pointOfInterestId);
+            if (pointFromStore == null)
+            {
+                return NotFound();
+            }
+
+            var pointToPatch =
+                new PointOfInterestForUpdateDTO()
+                {
+                    Name = pointFromStore.Name,
+                    Description = pointFromStore.Description,
+                };
+            patchDocument.ApplyTo(pointToPatch, ModelState);
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (!TryValidateModel(pointToPatch))
+            {
+                return BadRequest(ModelState);
+            }
+
+            pointFromStore.Name = pointToPatch.Name;
+            pointFromStore.Description = pointToPatch.Description;
+
+            return NoContent();
         }
     }
 }
