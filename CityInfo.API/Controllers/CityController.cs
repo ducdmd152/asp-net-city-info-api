@@ -1,4 +1,5 @@
-﻿using CityInfo.API.Models;
+﻿using AutoMapper;
+using CityInfo.API.Models;
 using CityInfo.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,11 +11,15 @@ namespace CityInfo.API.Controllers
     {
         private readonly CityDataStore _cityDataStore;
         private readonly ICityInfoRepository _cityInfoRepository;
+        private readonly IMapper _mapper;
 
-        public CityController(CityDataStore cityDataStore, ICityInfoRepository cityInfoRepository)
+        public CityController(CityDataStore cityDataStore, 
+            ICityInfoRepository cityInfoRepository,
+            IMapper mapper)
         {
             _cityDataStore = cityDataStore ?? throw new ArgumentNullException(nameof(cityDataStore));
             _cityInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         [HttpGet] // HttpGet("api/cities")
@@ -22,18 +27,19 @@ namespace CityInfo.API.Controllers
         {
             var cityEntities = await _cityInfoRepository.GetCitiesAsync();
 
-            var results = new List<CityWithoutPointsOfInterestDTO>();
+            return Ok(_mapper.Map<IEnumerable<CityWithoutPointsOfInterestDTO>>(cityEntities));
+            //var results = new List<CityWithoutPointsOfInterestDTO>();
 
-            foreach (var cityEntity in cityEntities)
-            {
-                results.Add(new CityWithoutPointsOfInterestDTO {
-                    Id = cityEntity.Id,
-                    Description = cityEntity.Description,
-                    Name = cityEntity.Name,
-                });
-            }
+            //foreach (var cityEntity in cityEntities)
+            //{
+            //    results.Add(new CityWithoutPointsOfInterestDTO {
+            //        Id = cityEntity.Id,
+            //        Description = cityEntity.Description,
+            //        Name = cityEntity.Name,
+            //    });
+            //}
 
-            return Ok(results);
+            //return Ok(results);
             //return new JsonResult(
             //    _cityDataStore.Cities);
         }

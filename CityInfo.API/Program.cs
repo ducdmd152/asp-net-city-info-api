@@ -1,3 +1,4 @@
+using AutoMapper;
 using CityInfo.API;
 using CityInfo.API.DbContexts;
 using CityInfo.API.Services;
@@ -45,6 +46,8 @@ builder.Services.AddDbContext<CityInfoContext>(options => {
         builder.Configuration["ConnectionStrings:CityInfoDbContextConnection"]);
 });
 builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 
