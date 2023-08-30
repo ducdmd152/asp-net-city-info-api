@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CityInfo.API.Entities;
 using CityInfo.API.Models;
 using CityInfo.API.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -45,14 +46,22 @@ namespace CityInfo.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<CityDTO>> GetCity(int id)
+        public async Task<IActionResult> GetCity(int id, bool includePointOfInterest = false)
         {
             //var result = _cityDataStore.Cities.SingleOrDefault(c => c.Id == id);
 
             //return result != null ? Ok(result) : NotFound();
 
-            var cityEntity = await _cityInfoRepository.GetCityAsync(id, true);
-            return Ok();
+            var cityEntity = await _cityInfoRepository.GetCityAsync(id, includePointOfInterest);
+            if (cityEntity == null)
+            {
+                return NotFound();
+            }
+
+            if (includePointOfInterest)
+                return Ok(_mapper.Map<CityDTO>(cityEntity));
+            else
+                return Ok(_mapper.Map<CityWithoutPointsOfInterestDTO>(cityEntity));
         }
     }
 }
