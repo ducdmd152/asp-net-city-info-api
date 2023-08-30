@@ -44,6 +44,7 @@ builder.Services.AddDbContext<CityInfoContext>(options => {
     options.UseSqlServer(
         builder.Configuration["ConnectionStrings:CityInfoDbContextConnection"]);
 });
+builder.Services.AddScoped<ICityInfoRepository, CityInfoRepository>();
 
 var app = builder.Build();
 
