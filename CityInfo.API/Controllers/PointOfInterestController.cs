@@ -15,13 +15,13 @@ namespace CityInfo.API.Controllers
         private readonly ILogger<PointOfInterestController> _logger;
         private readonly IMailService _mailService;
         private readonly CityDataStore _cityDataStore;
-        private readonly CityInfoRepository _cityInfoRepository;
+        private readonly ICityInfoRepository _cityInfoRepository;
         private readonly IMapper _mapper;
 
         public PointOfInterestController(ILogger<PointOfInterestController> logger,
             IMailService mailService,
             CityDataStore cityDataStore,
-            CityInfoRepository cityInfoRepository,
+            ICityInfoRepository cityInfoRepository,
             IMapper mapper)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
@@ -95,6 +95,7 @@ namespace CityInfo.API.Controllers
                      pointOfInterestId = createdPointOfInterestToReturn.Id
                  },
                  createdPointOfInterestToReturn);
+            return Ok();
         }
 
         [HttpPut("{pointOfInterestId}")]
