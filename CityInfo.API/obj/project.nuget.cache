@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "WJiHgLEW59KhrsEe6lFdvuzhOLyZqAO3rQn5ihRAeoZaWE64NkNNGCR/gCzYNjlCQGYYQNajC54GeIc7VeBOZg==",
+  "dgSpecHash": "MoetwcnlaqK1kMvxHiVXCVRrUVMdGU5lPQ7pbAx7yUPgK5LmdTY+GDcRykCCtHanlEHGlObOVKRx+rY+cWfNng==",
   "success": true,
   "projectFilePath": "D:\\dotNET6\\CityInfo\\CityInfo.API\\CityInfo.API.csproj",
   "expectedPackageFiles": [
@@ -36,11 +36,12 @@
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.extensions.options.configurationextensions\\2.0.0\\microsoft.extensions.options.configurationextensions.2.0.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identity.client\\4.21.1\\microsoft.identity.client.4.21.1.nupkg.sha512",
+    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.32.2\\microsoft.identitymodel.abstractions.6.32.2.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.8.0\\microsoft.identitymodel.jsonwebtokens.6.8.0.nupkg.sha512",
-    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
+    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.logging\\6.32.2\\microsoft.identitymodel.logging.6.32.2.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.protocols\\6.8.0\\microsoft.identitymodel.protocols.6.8.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.protocols.openidconnect\\6.8.0\\microsoft.identitymodel.protocols.openidconnect.6.8.0.nupkg.sha512",
-    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\MSI\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.32.2\\microsoft.identitymodel.tokens.6.32.2.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\MSI\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
